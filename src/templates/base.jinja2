@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Excel to Analytics Web App</title>
+    {% include 'html_dependencies.jinja2' %}
+    <script>
+        $(document).ready(function(){
+        $('#data_table').DataTable();
+    });
+    </script>
+    <script>
+        $(document).ready(function(){
+        $('#data_table2').DataTable();
+    });
+    </script>
+    <script>
+        $(document).ready(function(){
+        $('#data_table3').DataTable();
+    });
+    </script>
+    <script>
+        $(document).ready(function(){
+        $('#data_table4').DataTable();
+    });
+    </script>
+    </script>
+    <script>
+        $(document).ready(function(){
+        $('#data_table5').DataTable();
+    });
+    </script>
+    <script>
+        $(document).ready(function(){
+        $('#data_table6').DataTable();
+    });
+    </script>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        <ul class=flashes>
+        {% for category, message in messages %}
+          <li class="{{ category }}">{{ message }}</li>
+        {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+
+</head>
+
+<body>
+<nav class="navbar navbar-default">
+    <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/" title="Home">Excel to Analytics Web App</a>
+            </div>
+</nav>
+
+<div class="content container">
+    {% block content %}
+
+    {% endblock %}
+</div>
+
+</body>
+</html>
